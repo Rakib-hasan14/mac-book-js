@@ -1,0 +1,81 @@
+
+
+// Every-Single-Price-Set-Function
+function changePrice(tagetId , Price){
+    const costId = document.getElementById(tagetId);
+    costId.innerText = Price;
+
+    totalPricing()
+}
+
+// Total-Calculate
+function totalPricing(){
+    const pcCostText = document.getElementById('pc-cost').innerText;
+    const pcCost = parseInt(pcCostText);
+
+    const memoryCostText = document.getElementById('memory-cost').innerText;
+    const memoryCost = parseInt(memoryCostText);
+    
+    const storageCostText = document.getElementById('storage-cost').innerText;
+    const storageCost = parseInt(storageCostText);
+
+    const deliveryCostText = document.getElementById('delivery-cost').innerText;
+    const deliveryCost = parseInt(deliveryCostText);
+
+    const totalPriceId = document.getElementById('total-cost');
+    const grandTotalId = document.getElementById('grand-total');
+    const totalPrice = pcCost + memoryCost + storageCost + deliveryCost;  
+
+    totalPriceId.innerText = totalPrice;
+    grandTotalId.innerText = totalPrice;
+}
+
+
+// Events ----
+
+// -- Memory-Event's
+document.getElementById('memory-first-option').addEventListener('click',function(){
+    changePrice('memory-cost',0);
+    
+    
+})
+
+document.getElementById('memory-second-option').addEventListener('click',function(){
+    changePrice('memory-cost', 180);
+
+
+})
+
+
+// -- Storage-Event's
+document.getElementById('storage-first-option').addEventListener('click',function(){
+    changePrice('storage-cost',0);
+
+
+})
+
+document.getElementById('storage-second-option').addEventListener('click',function(){
+    changePrice('storage-cost', 100);
+
+
+})
+
+document.getElementById('storage-third-option').addEventListener('click',function(){
+    changePrice('storage-cost', 180);
+
+
+})
+
+
+// -- Delivery-Event's
+document.getElementById('delivery-first-option').addEventListener('click',function(){
+    changePrice('delivery-cost',0);
+
+
+})
+
+document.getElementById('delivery-second-option').addEventListener('click',function(){
+    changePrice('delivery-cost', 20);
+
+
+})

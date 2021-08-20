@@ -88,6 +88,9 @@ document.getElementById('promo-apply').addEventListener('click',function(){
     const grandTotalId = document.getElementById('grand-total');
     const grandTotal = parseInt(grandTotalId.innerText);
     if(inputValue == promoCode){
-        grandTotalId.innerText = grandTotal - 20 / 100;
+        grandTotalId.innerText = grandTotal * (100 - 20) /100;
+    }
+    else if(inputValue != promoCode){
+        alert('Please enter a valid Promo');
     }
 })

@@ -79,3 +79,15 @@ document.getElementById('delivery-second-option').addEventListener('click',funct
 
 
 })
+
+// -- Promo-Apply-Event 
+
+document.getElementById('promo-apply').addEventListener('click',function(){
+    const inputValue = document.getElementById('promo-Input').value;
+    const promoCode = 'stevekaku';
+    const grandTotalId = document.getElementById('grand-total');
+    const grandTotal = parseInt(grandTotalId.innerText);
+    if(inputValue == promoCode){
+        grandTotalId.innerText = grandTotal - 20 / 100;
+    }
+})

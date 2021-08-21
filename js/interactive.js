@@ -1,6 +1,6 @@
 
 
-// Every-Single-Price-Set-Function
+// Every-Single-Price-Set-Function --
 function changePrice(tagetId , Price){
     const costId = document.getElementById(tagetId);
     costId.innerText = Price;
@@ -8,7 +8,7 @@ function changePrice(tagetId , Price){
     totalPricing()
 }
 
-// Total-Calculate
+// Total-Calculate --
 function totalPricing(){
     const pcCostText = document.getElementById('pc-cost').innerText;
     const pcCost = parseInt(pcCostText);
@@ -30,6 +30,20 @@ function totalPricing(){
     grandTotalId.innerText = totalPrice;
 }
 
+// Promo-JS ---
+function promo(){
+    totalPricing();
+    const inputValue = document.getElementById('promo-Input').value;
+    const promoCode = 'stevekaku';
+    const grandTotalId = document.getElementById('grand-total');
+    const grandTotal = parseInt(grandTotalId.innerText);
+    if(inputValue == promoCode){
+        grandTotalId.innerText = grandTotal * (100 - 20) /100;
+    }
+    else if(inputValue != promoCode){
+        alert('Please enter a valid Promo');
+    }
+}
 
 // Events ----
 
@@ -83,14 +97,5 @@ document.getElementById('delivery-second-option').addEventListener('click',funct
 // -- Promo-Apply-Event 
 
 document.getElementById('promo-apply').addEventListener('click',function(){
-    const inputValue = document.getElementById('promo-Input').value;
-    const promoCode = 'stevekaku';
-    const grandTotalId = document.getElementById('grand-total');
-    const grandTotal = parseInt(grandTotalId.innerText);
-    if(inputValue == promoCode){
-        grandTotalId.innerText = grandTotal * (100 - 20) /100;
-    }
-    else if(inputValue != promoCode){
-        alert('Please enter a valid Promo');
-    }
+    promo()
 })

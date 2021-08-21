@@ -41,7 +41,7 @@ function promo(){
         grandTotalId.innerText = grandTotal * (100 - 20) /100;
     }
     else if(inputValue != promoCode){
-        alert('Please enter a valid Promo');
+        alert('Please enter a Promo Code');
     }
 }
 
@@ -97,5 +97,7 @@ document.getElementById('delivery-second-option').addEventListener('click',funct
 // -- Promo-Apply-Event 
 
 document.getElementById('promo-apply').addEventListener('click',function(){
-    promo()
+    promo();
+    const inputValue = document.getElementById('promo-Input');
+    inputValue.value = '';
 })
